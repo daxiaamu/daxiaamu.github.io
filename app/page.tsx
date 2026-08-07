@@ -50,7 +50,7 @@ export default function Home() {
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
         <div className="section-heading">
           <div>
-            <h2 id="projects-title">我的项目</h2>
+            <h2 id="projects-title">热门项目</h2>
           </div>
         </div>
 

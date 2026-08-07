@@ -11,6 +11,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /DAXIAAMU — 个人主页/);
   assert.match(html, /一加全能工具箱/);
   assert.match(html, /爱看影视/);
+  assert.match(html, /热门项目/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/oplusmutools/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/ikandroid/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
