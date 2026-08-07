@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { developer, sitePath } from "../site-data";
 
 export const dynamic = "force-static";
@@ -14,7 +15,7 @@ export default function PrivacyPolicy() {
   return (
     <main className="policy-shell">
       <header className="site-header policy-header">
-        <a className="brand" href={`${sitePath}/`} aria-label="返回首页"><span className="brand-mark">DA</span><span>{developer.handle}</span></a>
+        <a className="brand" href={`${sitePath}/`} aria-label="返回首页"><Image className="brand-logo" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={38} height={38} unoptimized /><span>{developer.handle}</span></a>
         <a className="back-link" href={`${sitePath}/`}>← 返回首页</a>
       </header>
 

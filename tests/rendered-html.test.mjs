@@ -13,6 +13,13 @@ test("exports the developer homepage", async () => {
   assert.match(html, /爱看影视/);
   assert.match(html, /https:\/\/ikanapp\.net\//);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
+  assert.match(html, /daxiaamu-logo\.png/);
+  assert.match(html, /https:\/\/daxiaamu\.com\//);
+  assert.match(html, /https:\/\/ifdian\.net\/a\/daxiaamu/);
+  assert.match(html, /https:\/\/space\.bilibili\.com\/317357319/);
+  assert.match(html, /https:\/\/weibo\.com\/daxiaamu/);
+  assert.match(html, /https:\/\/coolapk\.com\/u\//);
+  assert.match(html, /聊聊你的想法/);
 });
 
 test("exports a public privacy policy with required disclosures", async () => {

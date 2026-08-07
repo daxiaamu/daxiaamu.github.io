@@ -14,7 +14,11 @@ export const metadata: Metadata = {
     template: "%s — DAXIAAMU",
   },
   description: "大侠阿木（DAXIAAMU）的个人主页：查看项目、产品与实用工具。",
-  icons: { icon: `${pagePath}/favicon.svg` },
+  icons: {
+    icon: `${pagePath}/daxiaamu-logo.png`,
+    shortcut: `${pagePath}/daxiaamu-logo.png`,
+    apple: `${pagePath}/daxiaamu-logo.png`,
+  },
   openGraph: {
     title: "DAXIAAMU — 个人主页",
     description: "把复杂的问题，做成简单的产品。",

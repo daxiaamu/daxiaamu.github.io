@@ -1,18 +1,19 @@
+import Image from "next/image";
 import { developer, projects, sitePath } from "./site-data";
+import { ContactPopover } from "./contact-popover";
 
 export default function Home() {
   return (
     <main>
       <header className="site-header">
         <a className="brand" href={`${sitePath}/`} aria-label={`${developer.name} 首页`}>
-          <span className="brand-mark">DA</span>
+          <Image className="brand-logo" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={38} height={38} unoptimized />
           <span>{developer.name}</span>
         </a>
         <nav className="nav-links" aria-label="主导航">
           <a href="#projects">项目</a>
           <a href="https://daxiaamu.com/" target="_blank" rel="noreferrer">博客</a>
           <a href="https://ifdian.net/a/daxiaamu" target="_blank" rel="noreferrer">捐赠</a>
-          <a className="nav-contact" href={`mailto:${developer.email}`}>联系我</a>
         </nav>
       </header>
 
@@ -26,7 +27,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">查看项目 <span aria-hidden="true">↓</span></a>
-            <a className="button button-secondary" href={`mailto:${developer.email}`}>聊聊你的想法 <span aria-hidden="true">↗</span></a>
+            <ContactPopover email={developer.email} />
           </div>
         </div>
 
@@ -75,7 +76,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div><span className="brand-mark small">DA</span><p>从真实需求出发，把工具做得简单、可靠。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
+        <div><Image className="brand-logo small" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={34} height={34} unoptimized /><p>从真实需求出发，把工具做得简单、可靠。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
         <div className="footer-links" aria-label="个人联系方式">
           <a href={`mailto:${developer.email}`}>邮箱</a>
           <a href="https://space.bilibili.com/317357319" target="_blank" rel="noreferrer">哔哩哔哩</a>
