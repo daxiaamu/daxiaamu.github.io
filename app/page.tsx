@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { developer, projects, sitePath } from "./site-data";
 import { ContactPopover } from "./contact-popover";
+import { InteractiveHeroVisual } from "./interactive-hero-visual";
 
 export default function Home() {
   return (
@@ -31,20 +32,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-hidden="true">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="code-card">
-            <div className="code-card-top"><i /><i /><i /><span>build.log</span></div>
-            <div className="code-line"><b>01</b><span><em>const</em> idea = <strong>&quot;真实需求&quot;</strong>;</span></div>
-            <div className="code-line"><b>02</b><span><em>while</em> (canImprove) {'{'}</span></div>
-            <div className="code-line indent"><b>03</b><span>product.<u>iterate</u>();</span></div>
-            <div className="code-line"><b>04</b><span>{'}'}</span></div>
-            <div className="code-result"><span>✓</span> ready to ship</div>
-          </div>
-          <span className="float-label label-android">ANDROID</span>
-          <span className="float-label label-detail">DETAILS MATTER</span>
-        </div>
+        <InteractiveHeroVisual />
       </section>
 
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
