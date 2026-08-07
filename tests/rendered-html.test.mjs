@@ -27,7 +27,10 @@ test("exports a public privacy policy with required disclosures", async () => {
 
   assert.match(html, /Device Presence 隐私政策 — DAXIAAMU/);
   assert.match(html, /无需注册或登录/);
-  assert.match(html, /数据保存与安全/);
-  assert.match(html, /数据删除/);
+  assert.match(html, /摄像头画面仅在设备上/);
+  assert.match(html, /MediaPipe 与 ML Kit/);
+  assert.match(html, /MacroDroid/);
+  assert.match(html, /com\.dxam\.presencedetector/);
+  assert.match(html, /本地保存、保留与删除/);
   assert.match(html, /xunzhaowenke@gmail\.com/);
 });
