@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light dark;
   --ink: #11120f;
   --paper: #f4f2eb;
   --white: #fffdf8;
@@ -105,6 +106,33 @@ footer > div { display: flex; align-items: center; gap: 12px; }footer p { margin
   .privacy-callout { margin: 76px auto; padding: 30px 24px; grid-template-columns: 1fr; }.privacy-symbol { width: 54px; height: 54px; }.privacy-callout .button { grid-column: 1; }.privacy-callout h2 { font-size: 31px; }
   footer { align-items: flex-start; gap: 28px; flex-direction: column; }.footer-links { align-items: flex-start; flex-direction: column; gap: 10px; }
   .policy-title { padding-bottom: 42px; }.policy-title h1 { font-size: 50px; }.policy-title > p:not(.eyebrow) { font-size: 16px; }.policy-meta { flex-direction: column; gap: 7px; }.policy-highlight { padding: 23px 20px; }.policy-content section { grid-template-columns: 1fr; gap: 7px; padding: 38px 0; }.contact-section dl div { grid-template-columns: 1fr; gap: 5px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f1f0e8;
+    --paper: #11120f;
+    --white: #1a1c17;
+    --muted: #a7aa9e;
+    --line: #34372f;
+    --blue: #7893ff;
+  }
+  ::selection { color: #11120f; }
+  .status-dot { box-shadow: 0 0 0 5px #293b21; }
+  .hero-intro, .policy-content section p { color: #b9bbae; }
+  .button-primary { background: var(--acid); color: #11120f; }
+  .button:hover { box-shadow: 5px 5px 0 #050604; }
+  .contact-menu-panel { box-shadow: 8px 8px 0 #050604; }
+  .contact-option:hover { background: #25271f; }
+  .contact-mark { background: var(--acid); color: #11120f; }
+  .orbit { border-color: rgba(241,240,232,.24); }
+  .float-label { box-shadow: 4px 4px 0 #050604; }
+  .label-detail { color: #11120f; }
+  .projects-section { background: #090a08; color: #fffdf8; }
+  .project-icon, .accent-orange .project-icon, .accent-violet .project-icon { color: #11120f; }
+  .privacy-callout { box-shadow: 12px 12px 0 #050604; }
+  .policy-meta { color: #a6a99d; }
+  .policy-highlight { box-shadow: 7px 7px 0 #050604; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; }.hero-visual::before, .orbit-one, .orbit-two, .code-card, .label-android, .label-detail { transform: none; }.code-card { transform: rotate(-2deg); }.terminal-cursor { animation: none; } }

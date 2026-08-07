@@ -8,7 +8,7 @@ test("exports the developer homepage", async () => {
   const html = await readFile(new URL("index.html", output), "utf8");
 
   assert.match(html, /<html lang="zh-CN">/);
-  assert.match(html, /DAXIAAMU — 个人主页/);
+  assert.match(html, /大侠阿木 DAXIAAMU — 个人主页/);
   assert.match(html, /一加全能工具箱/);
   assert.match(html, /爱看影视/);
   assert.match(html, /热门项目/);
@@ -28,7 +28,7 @@ test("exports the developer homepage", async () => {
 test("exports a public privacy policy with required disclosures", async () => {
   const html = await readFile(new URL("devicepresence/privacy.html", output), "utf8");
 
-  assert.match(html, /Device Presence 隐私政策 — DAXIAAMU/);
+  assert.match(html, /Device Presence 隐私政策 — 大侠阿木 DAXIAAMU/);
   assert.match(html, /无需注册或登录/);
   assert.match(html, /摄像头画面仅在设备上/);
   assert.match(html, /MediaPipe 与 ML Kit/);
