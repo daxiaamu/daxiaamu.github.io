@@ -1,3 +1,5 @@
+import projectActivity from "./project-activity.generated.json";
+
 export const developer = {
   name: "大侠阿木",
   handle: "DAXIAAMU",
@@ -22,7 +24,7 @@ type Project = {
   action?: string;
 };
 
-export const projects: readonly Project[] = [
+const projectList: readonly Project[] = [
   {
     name: "一加全能工具箱",
     monogram: "1+",
@@ -32,8 +34,8 @@ export const projects: readonly Project[] = [
     tags: ["Android", "Kotlin", "效率工具"],
     accent: "lime",
     featured: true,
-    url: "https://optool.daxiaamu.com/",
-    action: "访问官网",
+    url: "https://github.com/daxiaamu/oplusmutools",
+    action: "查看源码",
   },
   {
     name: "爱看影视",
@@ -44,8 +46,8 @@ export const projects: readonly Project[] = [
     tags: ["Android", "UserScript", "影视聚合"],
     accent: "blue",
     featured: true,
-    url: "https://ikanapp.net/",
-    action: "访问官网",
+    url: "https://github.com/daxiaamu/ikandroid",
+    action: "查看源码",
   },
   {
     name: "QuickCopy",
@@ -136,3 +138,20 @@ export const projects: readonly Project[] = [
     action: "查看源码",
   },
 ];
+
+const activityByRepository = projectActivity as Record<string, string>;
+
+function repositoryName(project: Project) {
+  return project.url?.match(/^https:\/\/github\.com\/daxiaamu\/([^/]+)\/?$/i)?.[1];
+}
+
+export const projects: readonly Project[] = projectList
+  .map((project, originalIndex) => ({
+    project,
+    originalIndex,
+    pushedAt: activityByRepository[repositoryName(project) ?? ""] ?? "",
+  }))
+  .sort((left, right) =>
+    right.pushedAt.localeCompare(left.pushedAt) || left.originalIndex - right.originalIndex
+  )
+  .map(({ project }) => project);

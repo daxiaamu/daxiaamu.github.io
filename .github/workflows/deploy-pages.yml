@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
 
 permissions:
   contents: read
@@ -24,6 +26,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Sort projects by recent activity
+        run: node scripts/fetch-project-activity.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
