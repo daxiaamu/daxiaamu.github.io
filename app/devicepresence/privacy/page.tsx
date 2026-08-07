@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { developer, sitePath } from "../site-data";
+import { developer, sitePath } from "../../site-data";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "应用隐私政策",
-  description: `由 ${developer.name} 发布的应用隐私政策，包含数据收集、保存、删除与联系方式。`,
+  title: "Device Presence 隐私政策",
+  description: `由 ${developer.name} 发布的 Device Presence 隐私政策，包含数据收集、保存、删除与联系方式。`,
 };
 
 const updated = "2026 年 8 月 8 日";
@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
 
         <div className="policy-content">
           <div className="policy-title">
-            <p className="eyebrow">应用隐私政策</p>
+            <p className="eyebrow">Device Presence 隐私政策</p>
             <h1>隐私，简单说明。</h1>
             <p>我们重视并尊重你的隐私。本页面公开说明由 {developer.name} 开发和发布的应用如何处理数据。</p>
             <div className="policy-meta"><span>生效日期：{updated}</span><span>最后更新：{updated}</span></div>
@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
             <p>应用无需注册或登录，不会主动收集、出售或与第三方共享可用于识别你身份的个人数据。</p>
           </div>
 
-          <section id="scope"><span className="section-index">01</span><div><h2>适用范围</h2><p>本政策适用于由 {developer.name} 开发并发布的移动应用，包括“一加全能工具箱”，以及在应用商店页面明确链接至本政策的其他应用。</p></div></section>
+          <section id="scope"><span className="section-index">01</span><div><h2>适用范围</h2><p>本政策仅适用于由 {developer.name} 开发并发布的 Device Presence 应用。</p></div></section>
 
           <section id="collection"><span className="section-index">02</span><div><h2>我们收集的数据</h2><p>应用无需创建账户。我们不会主动收集你的姓名、电子邮箱、电话号码、精确位置、通讯录、照片或其他可用于识别个人身份的信息。</p><p>应用的部分功能可能需要访问设备能力或系统信息。相关权限仅在实现你主动使用的功能时调用，权限用途会在系统授权界面中说明；你可以拒绝或随时在系统设置中撤销授权。</p></div></section>
 

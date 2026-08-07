@@ -1,3 +1,3 @@
 https://daxiaamu.github.io/
 
-https://daxiaamu.github.io/privacy
+https://daxiaamu.github.io/devicepresence/privacy
