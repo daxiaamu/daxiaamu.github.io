@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const restingValues = {
   "--hero-bg-x": "0px",
@@ -22,9 +22,40 @@ const restingValues = {
 export function InteractiveHeroVisual() {
   const visualRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
+  const [terminalText, setTerminalText] = useState("");
 
   useEffect(() => () => {
     if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const reducedMotionTimer = setTimeout(() => setTerminalText("ready to ship"), 0);
+      return () => clearTimeout(reducedMotionTimer);
+    }
+
+    const typo = "ready to shit";
+    const sequence = [
+      { text: "", duration: 420 },
+      ...Array.from(typo, (_, index) => ({ text: typo.slice(0, index + 1), duration: 82 })),
+      { text: typo, duration: 1150 },
+      { text: "ready to shi", duration: 380 },
+      { text: "ready to ship", duration: 1900 },
+    ];
+    let step = 0;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const play = () => {
+      const current = sequence[step];
+      setTerminalText(current.text);
+      timer = setTimeout(() => {
+        step = (step + 1) % sequence.length;
+        play();
+      }, current.duration);
+    };
+
+    play();
+    return () => clearTimeout(timer);
   }, []);
 
   function setValues(values: Record<string, string>) {
@@ -84,9 +115,7 @@ export function InteractiveHeroVisual() {
         <div className="code-line"><b>02</b><span><em>while</em> (canImprove) {'{'}</span></div>
         <div className="code-line indent"><b>03</b><span>product.<u>iterate</u>();</span></div>
         <div className="code-line"><b>04</b><span>{'}'}</span></div>
-        <div className="code-result">
-          <span>✓</span> ready to shi<span className="terminal-letter-slot"><i className="terminal-typo">t</i><i className="terminal-fix">p</i></span><i className="terminal-cursor" />
-        </div>
+        <div className="code-result"><span>✓</span><span className="terminal-text">{terminalText}</span><i className="terminal-cursor" /></div>
       </div>
       <span className="float-label label-android">ANDROID</span>
       <span className="float-label label-detail">DETAILS MATTER</span>
