@@ -10,7 +10,6 @@ export default function Home() {
         </a>
         <nav className="nav-links" aria-label="主导航">
           <a href="#projects">项目</a>
-          <a href={`${sitePath}/privacy`}>隐私政策</a>
           <a className="nav-contact" href={`mailto:${developer.email}`}>联系我</a>
         </nav>
       </header>
@@ -48,8 +47,7 @@ export default function Home() {
       <section className="projects-section" id="projects" aria-labelledby="projects-title">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">精选作品</p>
-            <h2 id="projects-title">近期项目</h2>
+            <h2 id="projects-title">我的项目</h2>
           </div>
         </div>
 
@@ -70,19 +68,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="privacy-callout" aria-labelledby="privacy-title">
-        <div className="privacy-symbol" aria-hidden="true">◎</div>
-        <div>
-          <p className="eyebrow">公开与透明</p>
-          <h2 id="privacy-title">你的数据，应当由你掌控。</h2>
-          <p>查看应用如何处理数据、数据保留方式，以及如何提出删除请求。</p>
-        </div>
-        <a className="button button-light" href={`${sitePath}/privacy`}>阅读隐私政策 <span aria-hidden="true">→</span></a>
-      </section>
-
       <footer>
         <div><span className="brand-mark small">DA</span><p>独立开发，认真打磨。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
-        <div className="footer-links"><a href={`mailto:${developer.email}`}>{developer.email}</a><a href={`${sitePath}/privacy`}>隐私政策</a></div>
+        <div className="footer-links"><a href={`mailto:${developer.email}`}>{developer.email}</a></div>
       </footer>
     </main>
   );
