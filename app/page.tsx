@@ -10,6 +10,8 @@ export default function Home() {
         </a>
         <nav className="nav-links" aria-label="主导航">
           <a href="#projects">项目</a>
+          <a href="https://daxiaamu.com/" target="_blank" rel="noreferrer">博客</a>
+          <a href="https://ifdian.net/a/daxiaamu" target="_blank" rel="noreferrer">捐赠</a>
           <a className="nav-contact" href={`mailto:${developer.email}`}>联系我</a>
         </nav>
       </header>
@@ -74,7 +76,12 @@ export default function Home() {
 
       <footer>
         <div><span className="brand-mark small">DA</span><p>从真实需求出发，把工具做得简单、可靠。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
-        <div className="footer-links"><a href={`mailto:${developer.email}`}>{developer.email}</a></div>
+        <div className="footer-links" aria-label="个人联系方式">
+          <a href={`mailto:${developer.email}`}>邮箱</a>
+          <a href="https://space.bilibili.com/317357319" target="_blank" rel="noreferrer">哔哩哔哩</a>
+          <a href="https://weibo.com/daxiaamu" target="_blank" rel="noreferrer">微博</a>
+          <a href="https://coolapk.com/u/%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8" target="_blank" rel="noreferrer">酷安</a>
+        </div>
       </footer>
     </main>
   );
