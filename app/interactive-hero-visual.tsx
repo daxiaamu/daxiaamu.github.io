@@ -84,7 +84,9 @@ export function InteractiveHeroVisual() {
         <div className="code-line"><b>02</b><span><em>while</em> (canImprove) {'{'}</span></div>
         <div className="code-line indent"><b>03</b><span>product.<u>iterate</u>();</span></div>
         <div className="code-line"><b>04</b><span>{'}'}</span></div>
-        <div className="code-result"><span>✓</span> ready to ship</div>
+        <div className="code-result">
+          <span>✓</span> ready to shi<span className="terminal-letter-slot"><i className="terminal-typo">t</i><i className="terminal-fix">p</i></span><i className="terminal-cursor" />
+        </div>
       </div>
       <span className="float-label label-android">ANDROID</span>
       <span className="float-label label-detail">DETAILS MATTER</span>

@@ -22,6 +22,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/weibo\.com\/daxiaamu/);
   assert.match(html, /https:\/\/coolapk\.com\/u\//);
   assert.match(html, /聊聊你的想法/);
+  assert.match(html, /terminal-typo[^>]*>t</);
+  assert.match(html, /terminal-fix[^>]*>p</);
 });
 
 test("exports a public privacy policy with required disclosures", async () => {
