@@ -51,7 +51,6 @@ export default function Home() {
             <p className="eyebrow">精选作品</p>
             <h2 id="projects-title">近期项目</h2>
           </div>
-          <p>独立完成从需求、设计到开发与发布的完整过程。</p>
         </div>
 
         <div className="project-grid">
