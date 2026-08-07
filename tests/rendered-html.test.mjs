@@ -8,9 +8,11 @@ test("exports the developer homepage", async () => {
   const html = await readFile(new URL("index.html", output), "utf8");
 
   assert.match(html, /<html lang="zh-CN">/);
-  assert.match(html, /DAXIAAMU — 独立开发者/);
+  assert.match(html, /DAXIAAMU — 个人主页/);
   assert.match(html, /一加全能工具箱/);
-  assert.match(html, /隐私政策/);
+  assert.match(html, /爱看影视/);
+  assert.match(html, /https:\/\/ikanapp\.net\//);
+  assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
 });
 
 test("exports a public privacy policy with required disclosures", async () => {

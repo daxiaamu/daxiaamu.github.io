@@ -10,20 +10,20 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DAXIAAMU — 独立开发者",
+    default: "DAXIAAMU — 个人主页",
     template: "%s — DAXIAAMU",
   },
-  description: "独立开发者大侠阿木（DAXIAAMU）的个人主页：查看开发项目与应用隐私政策。",
+  description: "大侠阿木（DAXIAAMU）的个人主页：查看项目、产品与实用工具。",
   icons: { icon: `${pagePath}/favicon.svg` },
   openGraph: {
-    title: "DAXIAAMU — 独立开发者",
+    title: "DAXIAAMU — 个人主页",
     description: "把复杂的问题，做成简单的产品。",
     type: "website",
     locale: "zh_CN",
   },
   twitter: {
     card: "summary",
-    title: "DAXIAAMU — 独立开发者",
+    title: "DAXIAAMU — 个人主页",
     description: "把复杂的问题，做成简单的产品。",
   },
 };
