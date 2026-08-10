@@ -26,8 +26,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Sort projects by recent activity
-        run: node scripts/fetch-project-activity.mjs
+      - name: Sort projects by GitHub Stars
+        run: node scripts/fetch-project-stars.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build

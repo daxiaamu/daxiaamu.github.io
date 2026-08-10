@@ -1,4 +1,4 @@
-import projectActivity from "./project-activity.generated.json";
+import projectStars from "./project-stars.generated.json";
 
 export const developer = {
   name: "大侠阿木",
@@ -22,6 +22,10 @@ type Project = {
   featured?: boolean;
   url?: string;
   action?: string;
+};
+
+type ProjectWithStars = Project & {
+  stars: number;
 };
 
 const projectList: readonly Project[] = [
@@ -139,19 +143,19 @@ const projectList: readonly Project[] = [
   },
 ];
 
-const activityByRepository = projectActivity as Record<string, string>;
+const starsByRepository = projectStars as Record<string, number>;
 
 function repositoryName(project: Project) {
   return project.url?.match(/^https:\/\/github\.com\/daxiaamu\/([^/]+)\/?$/i)?.[1];
 }
 
-export const projects: readonly Project[] = projectList
+export const projects: readonly ProjectWithStars[] = projectList
   .map((project, originalIndex) => ({
     project,
     originalIndex,
-    pushedAt: activityByRepository[repositoryName(project) ?? ""] ?? "",
+    stars: starsByRepository[repositoryName(project) ?? ""] ?? 0,
   }))
   .sort((left, right) =>
-    right.pushedAt.localeCompare(left.pushedAt) || left.originalIndex - right.originalIndex
+    right.stars - left.stars || left.originalIndex - right.originalIndex
   )
-  .map(({ project }) => project);
+  .map(({ project, stars }) => ({ ...project, stars }));

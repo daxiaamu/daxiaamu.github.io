@@ -43,9 +43,11 @@ export default function Home() {
         </div>
 
         <div className="project-grid">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <article className={`project-card accent-${project.accent} ${project.featured ? "featured" : ""}`} key={project.name}>
-              <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
+              <div className="project-stars" title="GitHub Stars" aria-label={`GitHub Stars：${project.stars}`}>
+                <span aria-hidden="true">★</span> {project.stars.toLocaleString("en-US")}
+              </div>
               <div className="project-icon" aria-hidden="true">{project.monogram}</div>
               <div className="project-content">
                 <div className="project-meta"><span>{project.category}</span><span>{project.status}</span></div>

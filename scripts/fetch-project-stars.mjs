@@ -2,14 +2,14 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const owner = "daxiaamu";
 const repositoriesUrl = new URL("../app/project-repositories.json", import.meta.url);
-const activityUrl = new URL("../app/project-activity.generated.json", import.meta.url);
+const starsUrl = new URL("../app/project-stars.generated.json", import.meta.url);
 const repositories = JSON.parse(await readFile(repositoriesUrl, "utf8"));
 
-let previousActivity = {};
+let previousStars = {};
 try {
-  previousActivity = JSON.parse(await readFile(activityUrl, "utf8"));
+  previousStars = JSON.parse(await readFile(starsUrl, "utf8"));
 } catch {
-  // The first build has no cached activity data yet.
+  // The first build has no cached Star data yet.
 }
 
 const headers = {
@@ -30,27 +30,27 @@ const results = await Promise.allSettled(
     }
 
     const data = await response.json();
-    if (typeof data.pushed_at !== "string") {
-      throw new Error(`${repository}: pushed_at is missing`);
+    if (!Number.isInteger(data.stargazers_count)) {
+      throw new Error(`${repository}: stargazers_count is missing`);
     }
 
-    return [repository, data.pushed_at];
+    return [repository, data.stargazers_count];
   })
 );
 
-const activity = { ...previousActivity };
+const stars = { ...previousStars };
 for (const result of results) {
   if (result.status === "fulfilled") {
-    const [repository, pushedAt] = result.value;
-    activity[repository] = pushedAt;
+    const [repository, starCount] = result.value;
+    stars[repository] = starCount;
   } else {
-    console.warn(`Keeping cached activity time: ${result.reason.message}`);
+    console.warn(`Keeping cached Star count: ${result.reason.message}`);
   }
 }
 
-const orderedActivity = Object.fromEntries(
-  repositories.map((repository) => [repository, activity[repository] ?? ""])
+const orderedStars = Object.fromEntries(
+  repositories.map((repository) => [repository, stars[repository] ?? 0])
 );
 
-await writeFile(activityUrl, `${JSON.stringify(orderedActivity, null, 2)}\n`, "utf8");
-console.log(`Updated activity for ${results.filter((result) => result.status === "fulfilled").length}/${repositories.length} projects.`);
+await writeFile(starsUrl, `${JSON.stringify(orderedStars, null, 2)}\n`, "utf8");
+console.log(`Updated Stars for ${results.filter((result) => result.status === "fulfilled").length}/${repositories.length} projects.`);
