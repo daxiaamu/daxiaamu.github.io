@@ -14,6 +14,11 @@ test("exports the developer homepage", async () => {
   assert.match(html, /热门项目/);
   assert.match(html, /class="project-stars"/);
   assert.doesNotMatch(html, /class="project-number"/);
+  assert.match(html, /GITHUB CONTRIBUTIONS/);
+  assert.match(html, /class="contribution-grid"/);
+  assert.match(html, /近一年贡献/);
+  assert.match(html, /当前连续天数/);
+  assert.match(html, /最长连续天数/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/oplusmutools/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/ikandroid/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);

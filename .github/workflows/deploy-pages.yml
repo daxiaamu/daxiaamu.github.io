@@ -30,6 +30,10 @@ jobs:
         run: node scripts/fetch-project-stars.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update GitHub Contributions
+        run: node scripts/fetch-github-contributions.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_OAUTH_TOKEN || secrets.GITHUB_TOKEN }}
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

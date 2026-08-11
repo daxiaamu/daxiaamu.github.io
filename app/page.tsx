@@ -2,6 +2,7 @@ import Image from "next/image";
 import { developer, projects, sitePath } from "./site-data";
 import { ContactPopover } from "./contact-popover";
 import { InteractiveHeroVisual } from "./interactive-hero-visual";
+import { GithubContributions } from "./github-contributions";
 
 export default function Home() {
   return (
@@ -64,6 +65,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <GithubContributions />
 
       <footer>
         <div><Image className="brand-logo small" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={34} height={34} unoptimized /><p>从真实需求出发，把工具做得简单、可靠。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
