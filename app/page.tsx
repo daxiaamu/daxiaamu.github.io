@@ -1,10 +1,19 @@
 import Image from "next/image";
 import { developer, projects, sitePath } from "./site-data";
-import { ContactPopover } from "./contact-popover";
 import { InteractiveHeroVisual } from "./interactive-hero-visual";
 import { GithubContributions } from "./github-contributions";
+import { FaAndroid } from "react-icons/fa6";
+import { LuBookOpen } from "react-icons/lu";
+import { SiBilibili, SiSinaweibo } from "react-icons/si";
 
 export default function Home() {
+  const entryLinks = [
+    { label: "博客", detail: "文章与记录", href: "https://daxiaamu.com/", icon: LuBookOpen, tone: "blog" },
+    { label: "酷安", detail: "应用与讨论", href: "https://coolapk.com/u/%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8", icon: FaAndroid, tone: "coolapk" },
+    { label: "哔哩哔哩", detail: "视频与动态", href: "https://space.bilibili.com/317357319", icon: SiBilibili, tone: "bilibili" },
+    { label: "微博", detail: "最新动态", href: "https://weibo.com/daxiaamu", icon: SiSinaweibo, tone: "weibo" },
+  ] as const;
+
   return (
     <main>
       <header className="site-header">
@@ -14,7 +23,6 @@ export default function Home() {
         </a>
         <nav className="nav-links" aria-label="主导航">
           <a href="#projects">项目</a>
-          <a href="https://daxiaamu.com/" target="_blank" rel="noreferrer">博客</a>
           <a href="https://ifdian.net/a/daxiaamu" target="_blank" rel="noreferrer">捐赠</a>
         </nav>
       </header>
@@ -27,10 +35,21 @@ export default function Home() {
             你好，我是 {developer.name}。我专注于 Android 工具与实用型产品，
             从一个真实需求出发，把想法打磨成可靠、克制、好用的软件。
           </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#projects">查看项目 <span aria-hidden="true">↓</span></a>
-            <ContactPopover email={developer.email} />
-          </div>
+          <nav className="quick-links" aria-label="常用入口">
+            {entryLinks.map(({ icon: Icon, ...entry }) => (
+              <a
+                className={`quick-link tone-${entry.tone}`}
+                href={entry.href}
+                target="_blank"
+                rel="noreferrer"
+                key={entry.label}
+              >
+                <span className="entry-icon" aria-hidden="true"><Icon /></span>
+                <span className="entry-copy"><strong>{entry.label}</strong><small>{entry.detail}</small></span>
+                <span className="entry-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </nav>
         </div>
 
         <InteractiveHeroVisual />

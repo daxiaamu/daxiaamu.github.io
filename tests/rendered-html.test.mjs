@@ -30,7 +30,12 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/space\.bilibili\.com\/317357319/);
   assert.match(html, /https:\/\/weibo\.com\/daxiaamu/);
   assert.match(html, /https:\/\/coolapk\.com\/u\//);
-  assert.match(html, /聊聊你的想法/);
+  assert.match(html, /aria-label="常用入口"/);
+  assert.match(html, /class="quick-link tone-blog"/);
+  assert.match(html, /class="quick-link tone-bilibili"/);
+  assert.match(html, /class="quick-link tone-weibo"/);
+  assert.match(html, /class="quick-link tone-coolapk"/);
+  assert.doesNotMatch(html, /class="quick-link tone-donate"/);
   assert.match(html, /terminal-text/);
 });
 
