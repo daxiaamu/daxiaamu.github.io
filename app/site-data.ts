@@ -163,6 +163,18 @@ const projectList: readonly Project[] = [
     url: "https://github.com/daxiaamu/Zhiliao",
     action: "查看源码",
   },
+
+  {
+    name: "Gallery Enhance",
+    monogram: "GE",
+    category: "Android 模块",
+    status: "开源",
+    description: "解除 ColorOS 相册将视频导出为实况照片时的 3 秒时长限制。",
+    tags: ["Kotlin", "libxposed", "ColorOS"],
+    accent: "blue",
+    url: "https://github.com/daxiaamu/GalleryEnhance",
+    action: "查看源码",
+  },
 ];
 
 const starsByRepository = projectStars as Record<string, number>;
