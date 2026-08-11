@@ -22,6 +22,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/oplusmutools/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/ikandroid/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
+  assert.match(html, /https:\/\/github\.com\/daxiaamu\/RealmeUI-Spanish-Enabler/);
+  assert.match(html, /https:\/\/github\.com\/daxiaamu\/Zhiliao/);
   assert.match(html, /daxiaamu-logo\.png/);
   assert.match(html, /https:\/\/daxiaamu\.com\//);
   assert.match(html, /https:\/\/ifdian\.net\/a\/daxiaamu/);

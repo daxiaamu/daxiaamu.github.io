@@ -141,6 +141,28 @@ const projectList: readonly Project[] = [
     url: "https://github.com/daxiaamu/payload_dumper_c",
     action: "查看源码",
   },
+  {
+    name: "RealmeUI Spanish Enabler",
+    monogram: "ES",
+    category: "Android 工具",
+    status: "开源",
+    description: "为已 Root 的 Realme UI 与 ColorOS 设备快速启用西班牙语的实用工具。",
+    tags: ["Java", "Root", "RealmeUI"],
+    accent: "orange",
+    url: "https://github.com/daxiaamu/RealmeUI-Spanish-Enabler",
+    action: "查看源码",
+  },
+  {
+    name: "知了",
+    monogram: "知",
+    category: "Android 模块",
+    status: "开源",
+    description: "面向知乎客户端的去广告 Xposed 模块，让信息流与阅读界面更清爽。",
+    tags: ["Java", "Xposed", "知乎"],
+    accent: "lime",
+    url: "https://github.com/daxiaamu/Zhiliao",
+    action: "查看源码",
+  },
 ];
 
 const starsByRepository = projectStars as Record<string, number>;
