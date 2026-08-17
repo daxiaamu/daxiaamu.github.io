@@ -2,6 +2,7 @@ import Image from "next/image";
 import { developer, projects, sitePath } from "./site-data";
 import { InteractiveHeroVisual } from "./interactive-hero-visual";
 import { GithubContributions } from "./github-contributions";
+import { VisitorCounter } from "./visitor-counter";
 import { FaAndroid } from "react-icons/fa6";
 import { LuBookOpen } from "react-icons/lu";
 import { SiBilibili, SiSinaweibo } from "react-icons/si";
@@ -88,7 +89,7 @@ export default function Home() {
       <GithubContributions />
 
       <footer>
-        <div><Image className="brand-logo small" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={34} height={34} unoptimized /><p>从真实需求出发，把工具做得简单、可靠。<br />© {new Date().getFullYear()} {developer.handle}</p></div>
+        <div><Image className="brand-logo small" src={`${sitePath}/daxiaamu-logo.png`} alt="" width={34} height={34} unoptimized /><p>从真实需求出发，把工具做得简单、可靠。<br /><VisitorCounter /><span className="footer-separator" aria-hidden="true"> · </span>© {new Date().getFullYear()} {developer.handle}</p></div>
         <div className="footer-links" aria-label="个人联系方式">
           <a href={`mailto:${developer.email}`}>邮箱</a>
           <a href="https://space.bilibili.com/317357319" target="_blank" rel="noreferrer">哔哩哔哩</a>

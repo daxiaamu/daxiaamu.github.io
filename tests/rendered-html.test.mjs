@@ -37,6 +37,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /class="quick-link tone-weibo"/);
   assert.match(html, /class="quick-link tone-coolapk"/);
   assert.doesNotMatch(html, /class="quick-link tone-donate"/);
+  assert.match(html, /累计访问/);
+  assert.match(html, /visitor-counter-/);
   assert.match(html, /terminal-text/);
 });
 

@@ -1,0 +1,17 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "daxiaamu-visitor-counter",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-17",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "daxiaamu-visitor-counter",
+      "database_id": "558ad914-091a-4442-8516-469fff3b0349",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
