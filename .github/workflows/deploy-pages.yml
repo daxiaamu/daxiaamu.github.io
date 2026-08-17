@@ -26,10 +26,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Sort projects by GitHub Stars
-        run: node scripts/fetch-project-stars.mjs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update GitHub Contributions
         run: node scripts/fetch-github-contributions.mjs
         env:

@@ -1,5 +1,3 @@
-import projectStars from "./project-stars.generated.json";
-
 export const developer = {
   name: "大侠阿木",
   handle: "DAXIAAMU",
@@ -24,11 +22,7 @@ type Project = {
   action?: string;
 };
 
-type ProjectWithStars = Project & {
-  stars: number;
-};
-
-const projectList: readonly Project[] = [
+export const projects: readonly Project[] = [
   {
     name: "一加全能工具箱",
     monogram: "1+",
@@ -38,20 +32,30 @@ const projectList: readonly Project[] = [
     tags: ["Android", "Kotlin", "效率工具"],
     accent: "lime",
     featured: true,
-    url: "https://github.com/daxiaamu/oplusmutools",
-    action: "查看源码",
+    url: "https://optool.daxiaamu.com/",
+    action: "前往官网",
   },
   {
     name: "爱看影视",
     monogram: "IK",
     category: "影视工具",
-    status: "APP · 油猴脚本",
-    description: "简洁原生的 Android 影视聚合应用，同时提供油猴脚本，覆盖电影、电视剧、榜单与多线路播放。",
-    tags: ["Android", "UserScript", "影视聚合"],
+    status: "Android APP",
+    description: "简洁原生的 Android 影视聚合应用，覆盖电影、电视剧、榜单与多线路播放。",
+    tags: ["Android", "Kotlin", "影视聚合"],
     accent: "blue",
-    featured: true,
-    url: "https://github.com/daxiaamu/ikandroid",
-    action: "查看源码",
+    url: "https://ikanapp.net/",
+    action: "查看详情",
+  },
+  {
+    name: "爱看机器人增强",
+    monogram: "猴",
+    category: "浏览器脚本",
+    status: "油猴脚本",
+    description: "为爱看机器人加入失效线路自动切换、换线续播、自动下一集与观看进度记忆。",
+    tags: ["UserScript", "Tampermonkey", "播放增强"],
+    accent: "orange",
+    url: "https://greasyfork.org/zh-CN/scripts/589261",
+    action: "查看详情",
   },
   {
     name: "QuickCopy",
@@ -62,7 +66,7 @@ const projectList: readonly Project[] = [
     tags: ["C", "Windows", "剪贴板"],
     accent: "orange",
     url: "https://github.com/daxiaamu/QuickCopy",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "OnePlus 12 · 55W PPS",
@@ -73,7 +77,7 @@ const projectList: readonly Project[] = [
     tags: ["OnePlus 12", "55W PPS", "模块"],
     accent: "violet",
     url: "https://github.com/daxiaamu/OnePlus12_55WPPS",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "米家中控模式",
@@ -84,7 +88,7 @@ const projectList: readonly Project[] = [
     tags: ["Java", "LSPosed", "Xiaomi Home"],
     accent: "blue",
     url: "https://github.com/daxiaamu/mijiapanel",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "Guise Reborn",
@@ -95,7 +99,7 @@ const projectList: readonly Project[] = [
     tags: ["Kotlin", "LSPosed", "Compose"],
     accent: "violet",
     url: "https://github.com/daxiaamu/Guise_Reborn",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "MUDL-C",
@@ -106,7 +110,7 @@ const projectList: readonly Project[] = [
     tags: ["C", "Windows", "多线程下载"],
     accent: "lime",
     url: "https://github.com/daxiaamu/mudl-c",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "MU 投屏",
@@ -117,18 +121,7 @@ const projectList: readonly Project[] = [
     tags: ["C", "scrcpy", "Android 投屏"],
     accent: "orange",
     url: "https://github.com/daxiaamu/MUScrcpy",
-    action: "查看源码",
-  },
-  {
-    name: "GitHub Downloader",
-    monogram: "GD",
-    category: "下载工具",
-    status: "开源",
-    description: "用于批量获取 GitHub Releases 文件的下载工具。",
-    tags: ["Python", "GitHub", "Releases"],
-    accent: "blue",
-    url: "https://github.com/daxiaamu/github-downloader",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "Payload Dumper C",
@@ -139,8 +132,31 @@ const projectList: readonly Project[] = [
     tags: ["C", "payload.bin", "多线程"],
     accent: "violet",
     url: "https://github.com/daxiaamu/payload_dumper_c",
-    action: "查看源码",
+    action: "查看详情",
   },
+  {
+    name: "Payload_Dumper网页版",
+    monogram: "PW",
+    category: "在线工具",
+    status: "网页版",
+    description: "无需安装，在浏览器中处理 payload.bin 固件包的在线工具。",
+    tags: ["Web", "payload.bin", "固件工具"],
+    accent: "blue",
+    url: "https://info.oplusrom.com/",
+    action: "查看详情",
+  },
+  {
+    name: "GitHub Downloader",
+    monogram: "GD",
+    category: "下载工具",
+    status: "开源",
+    description: "用于批量获取 GitHub Releases 文件的下载工具。",
+    tags: ["Python", "GitHub", "Releases"],
+    accent: "blue",
+    url: "https://github.com/daxiaamu/github-downloader",
+    action: "查看详情",
+  },
+
   {
     name: "RealmeUI Spanish Enabler",
     monogram: "ES",
@@ -150,7 +166,7 @@ const projectList: readonly Project[] = [
     tags: ["Java", "Root", "RealmeUI"],
     accent: "orange",
     url: "https://github.com/daxiaamu/RealmeUI-Spanish-Enabler",
-    action: "查看源码",
+    action: "查看详情",
   },
   {
     name: "知了",
@@ -161,9 +177,8 @@ const projectList: readonly Project[] = [
     tags: ["Java", "Xposed", "知乎"],
     accent: "lime",
     url: "https://github.com/daxiaamu/Zhiliao",
-    action: "查看源码",
+    action: "查看详情",
   },
-
   {
     name: "Gallery Enhance",
     monogram: "GE",
@@ -173,23 +188,18 @@ const projectList: readonly Project[] = [
     tags: ["Kotlin", "libxposed", "ColorOS"],
     accent: "blue",
     url: "https://github.com/daxiaamu/GalleryEnhance",
-    action: "查看源码",
+    action: "查看详情",
   },
+  {
+    name: "KSU 中文网",
+    monogram: "KSU",
+    category: "资源网站",
+    status: "持续更新",
+    description: "汇总 ROOT 工具与常见模块的版本更新，提供中文信息与下载入口。",
+    tags: ["Root", "KernelSU", "模块更新"],
+    accent: "lime",
+    url: "https://kernelsu.cn/",
+    action: "查看详情",
+  },
+
 ];
-
-const starsByRepository = projectStars as Record<string, number>;
-
-function repositoryName(project: Project) {
-  return project.url?.match(/^https:\/\/github\.com\/daxiaamu\/([^/]+)\/?$/i)?.[1];
-}
-
-export const projects: readonly ProjectWithStars[] = projectList
-  .map((project, originalIndex) => ({
-    project,
-    originalIndex,
-    stars: starsByRepository[repositoryName(project) ?? ""] ?? 0,
-  }))
-  .sort((left, right) =>
-    right.stars - left.stars || left.originalIndex - right.originalIndex
-  )
-  .map(({ project, stars }) => ({ ...project, stars }));
