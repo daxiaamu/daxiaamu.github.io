@@ -33,7 +33,7 @@ export const projects: readonly Project[] = [
     accent: "lime",
     featured: true,
     url: "https://optool.daxiaamu.com/",
-    action: "前往官网",
+    action: "查看详情",
   },
   {
     name: "爱看影视",

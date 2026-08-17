@@ -28,7 +28,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/greasyfork\.org\/zh-CN\/scripts\/589261/);
   assert.match(html, /https:\/\/info\.oplusrom\.com\//);
   assert.match(html, /https:\/\/kernelsu\.cn\//);
-  assert.match(html, /前往官网/);
+  assert.doesNotMatch(html, /前往官网/);
   assert.match(html, /查看详情/);
   assert.doesNotMatch(html, /查看源码/);
   const projectNames = [...html.matchAll(/<h3>(.*?)<\/h3>/g)].map((match) => match[1]);
