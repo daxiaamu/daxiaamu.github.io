@@ -21,6 +21,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /最长连续天数/);
   assert.match(html, /https:\/\/optool\.daxiaamu\.com\//);
   assert.match(html, /https:\/\/ikanapp\.net\//);
+  assert.match(html, /APKExport/);
+  assert.match(html, /https:\/\/daxiaamu\.github\.io\/APKExport\//);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/RealmeUI-Spanish-Enabler/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Zhiliao/);

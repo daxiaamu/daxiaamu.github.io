@@ -69,6 +69,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "APKExport",
+    monogram: "AE",
+    category: "Android 工具",
+    status: "持续维护",
+    description: "导出与分享已安装应用，并扫描、安装和整理本地安装包，支持 APK、APKS、XAPK 与 APKM 格式。",
+    tags: ["Android", "Jetpack Compose", "安装包管理"],
+    accent: "lime",
+    url: "https://daxiaamu.github.io/APKExport/",
+    action: "查看详情",
+  },
+  {
     name: "OnePlus 12 · 55W PPS",
     monogram: "55",
     category: "充电模块",
