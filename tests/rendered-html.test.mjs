@@ -51,6 +51,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /累计访问/);
   assert.match(html, /visitor-counter-/);
   assert.match(html, /terminal-text/);
+  assert.match(html, /class="float-label label-open-source">OPEN SOURCE/);
+  assert.match(html, /class="float-label label-keep-building">KEEP BUILDING/);
 });
 
 test("exports a public privacy policy with required disclosures", async () => {

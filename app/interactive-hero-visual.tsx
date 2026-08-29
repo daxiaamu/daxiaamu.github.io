@@ -17,6 +17,10 @@ const restingValues = {
   "--hero-label-one-y": "0px",
   "--hero-label-two-x": "0px",
   "--hero-label-two-y": "0px",
+  "--hero-label-three-x": "0px",
+  "--hero-label-three-y": "0px",
+  "--hero-label-four-x": "0px",
+  "--hero-label-four-y": "0px",
 };
 
 export function InteractiveHeroVisual() {
@@ -91,6 +95,10 @@ export function InteractiveHeroVisual() {
       "--hero-label-one-y": `${y * 11}px`,
       "--hero-label-two-x": `${-x * 12}px`,
       "--hero-label-two-y": `${-y * 9}px`,
+      "--hero-label-three-x": `${-x * 10}px`,
+      "--hero-label-three-y": `${y * 13}px`,
+      "--hero-label-four-x": `${x * 16}px`,
+      "--hero-label-four-y": `${-y * 8}px`,
     }));
   }
 
@@ -119,6 +127,8 @@ export function InteractiveHeroVisual() {
       </div>
       <span className="float-label label-android">ANDROID</span>
       <span className="float-label label-detail">DETAILS MATTER</span>
+      <span className="float-label label-open-source">OPEN SOURCE</span>
+      <span className="float-label label-keep-building">KEEP BUILDING</span>
     </div>
   );
 }
