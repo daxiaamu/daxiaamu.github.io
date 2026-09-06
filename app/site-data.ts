@@ -202,6 +202,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "OPlus Camera Enhance",
+    monogram: "OCE",
+    category: "Android 模块",
+    status: "持续开发",
+    description: "让原本不支持的一加、真我及移植系统设备，也能使用 OPPO 哈苏磁吸闪光灯。",
+    tags: ["Kotlin", "Xposed", "ColorOS"],
+    accent: "violet",
+    url: "https://github.com/daxiaamu/OPlusCameraEnhance",
+    action: "查看详情",
+  },
+  {
     name: "KSU 中文网",
     monogram: "KSU",
     category: "资源网站",
