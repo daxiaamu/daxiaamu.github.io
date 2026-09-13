@@ -102,6 +102,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "ReSukiSU · OnePlus Legacy",
+    monogram: "RS",
+    category: "内核项目",
+    status: "实验版",
+    description: "为一加 8、8T、9 系列七款旧机型集成 ReSukiSU，提供按官方系统版本匹配的 boot.img 与可复现构建流程。",
+    tags: ["ReSukiSU", "OnePlus 8 / 9", "boot.img"],
+    accent: "lime",
+    url: "https://github.com/daxiaamu/ReSukiSU-OnePlus-Legacy",
+    action: "查看详情",
+  },
+  {
     name: "OnePlus 12 · 55W PPS",
     monogram: "55",
     category: "充电模块",
