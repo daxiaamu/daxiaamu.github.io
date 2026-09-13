@@ -80,6 +80,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "油门拉满",
+    monogram: "FT",
+    category: "Android 工具",
+    status: "开源",
+    description: "同时驱动 CPU 与 GPU 加速耗电，可设定停止电量并实时查看温度、功耗与预计耗时。",
+    tags: ["Java", "CPU / GPU", "电池工具"],
+    accent: "orange",
+    url: "https://github.com/daxiaamu/Full-Throttle",
+    action: "查看详情",
+  },
+  {
     name: "OnePlus 12 · 55W PPS",
     monogram: "55",
     category: "充电模块",
