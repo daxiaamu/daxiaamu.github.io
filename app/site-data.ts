@@ -91,6 +91,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "一加 8T · ColorOS 16",
+    monogram: "8T",
+    category: "系统移植",
+    status: "持续更新",
+    description: "基于 OPPO Reno15c 的 ColorOS 16，结合一加 8T 原厂底层，适配指纹、三段式、相机、互联与多项系统功能。",
+    tags: ["OnePlus 8T", "ColorOS 16", "移植 ROM"],
+    accent: "blue",
+    url: "https://optool.daxiaamu.com/op8tcoloros16",
+    action: "查看详情",
+  },
+  {
     name: "OnePlus 12 · 55W PPS",
     monogram: "55",
     category: "充电模块",

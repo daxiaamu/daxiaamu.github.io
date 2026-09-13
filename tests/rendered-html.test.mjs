@@ -24,6 +24,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /APKExport/);
   assert.match(html, /https:\/\/daxiaamu\.github\.io\/APKExport\//);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Full-Throttle/);
+  assert.match(html, /https:\/\/optool\.daxiaamu\.com\/op8tcoloros16/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/payload_dumper_c/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/RealmeUI-Spanish-Enabler/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Zhiliao/);
@@ -38,6 +39,7 @@ test("exports the developer homepage", async () => {
   const projectNames = [...html.matchAll(/<h3>(.*?)<\/h3>/g)].map((match) => match[1]);
   assert.equal(projectNames.indexOf("爱看机器人增强"), projectNames.indexOf("爱看影视") + 1);
   assert.equal(projectNames.indexOf("油门拉满"), projectNames.indexOf("APKExport") + 1);
+  assert.equal(projectNames.indexOf("一加 8T · ColorOS 16"), projectNames.indexOf("油门拉满") + 1);
   assert.equal(projectNames.indexOf("Payload_Dumper网页版"), projectNames.indexOf("Payload Dumper C") + 1);
   assert.equal(projectNames.indexOf("OPlus Camera Enhance"), projectNames.indexOf("Gallery Enhance") + 1);
   assert.match(html, /daxiaamu-logo\.png/);
