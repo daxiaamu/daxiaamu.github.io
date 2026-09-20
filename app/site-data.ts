@@ -102,6 +102,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "一加 8T · ColorOS 17",
+    monogram: "17",
+    category: "系统移植",
+    status: "尝鲜版",
+    description: "为一加 8T 适配 ColorOS 17，修复指纹、三段式、相机与互联，并集成动画等级、实时材质模糊及高级重启等 MOD 设置。",
+    tags: ["OnePlus 8T", "ColorOS 17", "移植 ROM"],
+    accent: "orange",
+    url: "https://optool.daxiaamu.com/op8tcoloros17",
+    action: "查看详情",
+  },
+  {
     name: "ReSukiSU · OnePlus Legacy",
     monogram: "RS",
     category: "内核项目",
