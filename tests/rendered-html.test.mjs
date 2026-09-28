@@ -21,6 +21,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /最长连续天数/);
   assert.match(html, /https:\/\/optool\.daxiaamu\.com\//);
   assert.match(html, /https:\/\/ikanapp\.net\//);
+  assert.match(html, /https:\/\/github\.com\/daxiaamu\/DBdown/);
   assert.match(html, /APKExport/);
   assert.match(html, /https:\/\/daxiaamu\.github\.io\/APKExport\//);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Full-Throttle/);
@@ -31,6 +32,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/RealmeUI-Spanish-Enabler/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Zhiliao/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/GalleryEnhance/);
+  assert.match(html, /https:\/\/github\.com\/daxiaamu\/ColorDuo/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/OPlusCameraEnhance/);
   assert.match(html, /https:\/\/greasyfork\.org\/zh-CN\/scripts\/589261/);
   assert.match(html, /https:\/\/info\.oplusrom\.com\//);
@@ -40,12 +42,14 @@ test("exports the developer homepage", async () => {
   assert.doesNotMatch(html, /查看源码/);
   const projectNames = [...html.matchAll(/<h3>(.*?)<\/h3>/g)].map((match) => match[1]);
   assert.equal(projectNames.indexOf("爱看机器人增强"), projectNames.indexOf("爱看影视") + 1);
+  assert.equal(projectNames.indexOf("逗逼下载器 · DBDown"), projectNames.indexOf("爱看机器人增强") + 1);
   assert.equal(projectNames.indexOf("油门拉满"), projectNames.indexOf("APKExport") + 1);
   assert.equal(projectNames.indexOf("一加 8T · ColorOS 16"), projectNames.indexOf("油门拉满") + 1);
   assert.equal(projectNames.indexOf("一加 8T · ColorOS 17"), projectNames.indexOf("一加 8T · ColorOS 16") + 1);
   assert.equal(projectNames.indexOf("ReSukiSU · OnePlus Legacy"), projectNames.indexOf("一加 8T · ColorOS 17") + 1);
   assert.equal(projectNames.indexOf("Payload_Dumper网页版"), projectNames.indexOf("Payload Dumper C") + 1);
-  assert.equal(projectNames.indexOf("OPlus Camera Enhance"), projectNames.indexOf("Gallery Enhance") + 1);
+  assert.equal(projectNames.indexOf("ColorDuo"), projectNames.indexOf("Gallery Enhance") + 1);
+  assert.equal(projectNames.indexOf("OPlus Camera Enhance"), projectNames.indexOf("ColorDuo") + 1);
   assert.match(html, /daxiaamu-logo\.png/);
   assert.match(html, /https:\/\/daxiaamu\.com\//);
   assert.match(html, /https:\/\/ifdian\.net\/a\/daxiaamu/);
