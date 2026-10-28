@@ -36,6 +36,17 @@ export const projects: readonly Project[] = [
     action: "查看详情",
   },
   {
+    name: "OPlusBox",
+    monogram: "OB",
+    category: "Android 工具",
+    status: "持续开发",
+    description: "面向 ColorOS 设备的 ROOT / LSP 系统增强工具，提供系统降级、本地安装、OTA 提取、网络与动画调节等能力。",
+    tags: ["Kotlin", "Root", "ColorOS 17"],
+    accent: "violet",
+    url: "https://optool.daxiaamu.com/oplusbox",
+    action: "查看详情",
+  },
+  {
     name: "爱看影视",
     monogram: "IK",
     category: "影视工具",

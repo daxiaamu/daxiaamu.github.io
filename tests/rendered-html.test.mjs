@@ -20,6 +20,8 @@ test("exports the developer homepage", async () => {
   assert.match(html, /当前连续天数/);
   assert.match(html, /最长连续天数/);
   assert.match(html, /https:\/\/optool\.daxiaamu\.com\//);
+  assert.match(html, /OPlusBox/);
+  assert.match(html, /https:\/\/optool\.daxiaamu\.com\/oplusbox/);
   assert.match(html, /https:\/\/ikanapp\.net\//);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/DBdown/);
   assert.match(html, /APKExport/);
@@ -41,6 +43,7 @@ test("exports the developer homepage", async () => {
   assert.match(html, /查看详情/);
   assert.doesNotMatch(html, /查看源码/);
   const projectNames = [...html.matchAll(/<h3>(.*?)<\/h3>/g)].map((match) => match[1]);
+  assert.equal(projectNames.indexOf("OPlusBox"), projectNames.indexOf("一加全能工具箱") + 1);
   assert.equal(projectNames.indexOf("爱看机器人增强"), projectNames.indexOf("爱看影视") + 1);
   assert.equal(projectNames.indexOf("逗逼下载器 · DBDown"), projectNames.indexOf("爱看机器人增强") + 1);
   assert.equal(projectNames.indexOf("油门拉满"), projectNames.indexOf("APKExport") + 1);
