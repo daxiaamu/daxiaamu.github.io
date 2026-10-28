@@ -32,10 +32,10 @@ test("exports the developer homepage", async () => {
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/RealmeUI-Spanish-Enabler/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/Zhiliao/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/GalleryEnhance/);
-  assert.match(html, /https:\/\/github\.com\/daxiaamu\/ColorDuo/);
   assert.match(html, /https:\/\/github\.com\/daxiaamu\/OPlusCameraEnhance/);
   assert.match(html, /https:\/\/greasyfork\.org\/zh-CN\/scripts\/589261/);
-  assert.match(html, /https:\/\/info\.oplusrom\.com\//);
+  assert.doesNotMatch(html, /Payload_Dumper网页版/);
+  assert.doesNotMatch(html, /ColorDuo/);
   assert.match(html, /https:\/\/kernelsu\.cn\//);
   assert.doesNotMatch(html, /前往官网/);
   assert.match(html, /查看详情/);
@@ -47,9 +47,7 @@ test("exports the developer homepage", async () => {
   assert.equal(projectNames.indexOf("一加 8T · ColorOS 16"), projectNames.indexOf("油门拉满") + 1);
   assert.equal(projectNames.indexOf("一加 8T · ColorOS 17"), projectNames.indexOf("一加 8T · ColorOS 16") + 1);
   assert.equal(projectNames.indexOf("ReSukiSU · OnePlus Legacy"), projectNames.indexOf("一加 8T · ColorOS 17") + 1);
-  assert.equal(projectNames.indexOf("Payload_Dumper网页版"), projectNames.indexOf("Payload Dumper C") + 1);
-  assert.equal(projectNames.indexOf("ColorDuo"), projectNames.indexOf("Gallery Enhance") + 1);
-  assert.equal(projectNames.indexOf("OPlus Camera Enhance"), projectNames.indexOf("ColorDuo") + 1);
+  assert.equal(projectNames.indexOf("OPlus Camera Enhance"), projectNames.indexOf("Gallery Enhance") + 1);
   assert.match(html, /daxiaamu-logo\.png/);
   assert.match(html, /https:\/\/daxiaamu\.com\//);
   assert.match(html, /https:\/\/ifdian\.net\/a\/daxiaamu/);
